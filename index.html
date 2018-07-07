@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lambda Innovation</title>
+        <link rel="stylesheet" type="text/css" href="LIWebsite/Css/Style.css" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111190795-3"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-111190795-3');
+        </script>
+    </head>
+    <body id="mainBody">
+        <div id="mainBar">
+            <img id="liLogo"src="LIWebsite/Image/Logo.png" />
+            <a id="liWebsite">Lambda Innovation</a>
+            <a id="liDesc">Yet another game development team</a>
+            <a id="ac" class="project" href="http://ac.li-dev.cn"><img src="LIWebsite/Image/Ac.png" width="40" height="40"/></a>
+            <a id="lc" class="project" href="https://github.com/LambdaInnovation/LambdaCraft" ><img src="LIWebsite/Image/Lc.png" width="40" height="40"/></a>
+            <a id="cc" class="project" href="https://indienova.com/g/cocoon-runner"><img src="LIWebsite/Image/Cocoon.png" width="40" height="40"/></a>
+            <a id="projectName"></a>
+            <a id="projectDesc"></a>
+        </div>
+        <script>
+            function showProjectHint(name, desc) {
+                var n = document.getElementById('projectName');
+                var d = document.getElementById('projectDesc');
+                n.innerHTML = name;
+                d.innerHTML = desc;
+            }
+            function hideProjHint() {
+                showProjectHint("", "");
+            }
+            function wrapProjectElement(id, name, desc) {
+                var e = document.getElementById(id);
+                e.onmouseover = function() { showProjectHint(name, desc); }
+                e.onmouseout = hideProjHint;
+            }
+
+            wrapProjectElement("ac", "AcademyCraft", "A Minecraft Mod about superability");
+            wrapProjectElement("lc", "LambdaCraft", "Minecraft Half-Life expansion");
+            wrapProjectElement("cc", "Cocoon", "A pixel-style 2d platformer taking place in a mysterious city");
+        </script>
+    </body>
+</html
